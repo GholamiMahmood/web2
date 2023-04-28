@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>creerProfile</title>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
+<script src="../static/js/script.js"></script>
+</head>
+<body>
+<div class="header">
+    <h3>Créer un profil d'utilisateur</h3> 
+    <p class="accueil" ><a  style="color:rgb(29, 29, 27);margin-left: 2.5cm;" href="http://localhost:5000/accueil">Accueil</a></p>
+</div>
+<br><br><br>
+    <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+      Nom de l'utilisateur:&emsp;&emsp;&emsp;&emsp;&ensp;</label>            
+      <input id="utilisateurId" type="text" name="nom" size="40" ><br>     
+      <br> 
+      <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Adresse courriel:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </label>            
+      <input id="courrielId" type="email"  name="courriel" placeholder="EX: utilisateur@gmail.com " size="40" ><br>      
+      <br>
+      <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Liste de noms de quartier:&emsp;&emsp;</label>            
+      <input id="listeId" type="text" name="liste" placeholder="EX: item1 item2 item3 " size="40" ><br>     
+      <br> 
+      <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Mot de passe:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</label>            
+      <input id="motPassId" type="password"  name="motPass" size="40" ><br>
+      <br>    
+    <br> 
+      <button class="butt butt1" style="font-size: medium;margin-left: 2.5cm;"  onclick="creerprofile();">Envoyer</button>
+      <br>
+      <div id="profileId" style="color:rgb(126, 11, 17);margin-left: 2.5cm;">
+        
+      </div>
+</body>
+</html>

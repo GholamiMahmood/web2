@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>declaration</title>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
+<script src="../static/js/script.js"></script>
+</head>
+<body>
+  <!--fonctionalite D1  -->
+<div class="header">
+    <h3>Declarer une nouvelle donnée d’extermination</h3> 
+    <p class="accueil" ><a  style="color:rgb(29, 29, 27);margin-left: 2.5cm;" href="http://localhost:5000/accueil">Accueil</a></p>
+</div>
+<br><br><br>
+
+    <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Nom de quartier:&emsp;&emsp;&emsp;&emsp;&ensp;</label>            
+      <input id="quartierId" type="text" name="nomQuartier" size="40" ><br>     
+      <br> 
+      <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Nom d'arrondissement:&emsp;&emsp; </label>            
+      <input id="arrondiId" type="text"  name="nomArrondi" size="40" ><br>      
+      <br>
+      <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Adresse:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>            
+      <input id="adressId" type="text" name="adresse" size="40" ><br>     
+      <br> 
+      <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Date de la visit:&emsp;&emsp;&emsp;&emsp;&emsp;</label>            
+      <input id="dateId" type="date"  name="date" size="40" ><br>
+      <br>
+      <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Nom et prenom:&emsp;&emsp;&emsp;&emsp;&ensp;</label>            
+      <input id="nomId" type="text" name="nom" size="40" ><br>     
+      <br> 
+      <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Descriptin de problem:&emsp;&ensp; </label>            
+      <input id="descriptionId" type="text"  name="description" size="40" ><br>
+    <br> 
+      <button class="butt butt1" style="font-size: medium;margin-left: 2.5cm;"  onclick="declarer();">Envoyer</button>
+      <br>
+      <div id="msg" style="color:rgb(126, 11, 17);margin-left: 2.5cm;">
+        
+      </div>
+</body>
+</html>

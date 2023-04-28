@@ -1,0 +1,9 @@
+pip install apscheduler
+pip install pyyaml
+pip install Flask-Mail
+sudo apt-get install npm
+sudo npm i -g raml2html
+pip3 install flask_json_schema
+pip install tweepy
+pip install Flask-BasicAuth
+pip install flask-httpauth

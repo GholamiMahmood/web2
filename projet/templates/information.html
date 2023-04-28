@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Recherche</title>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link> 
+</head>
+<body>
+  <div class="header">
+    <h3>Les données à propos d’un quartier</h3> 
+    <p class="accueil" ><a  style="color:rgb(12, 12, 11);margin-left: 2.5cm;" href="http://localhost:5000/accueil">Accueil</a></p>
+  </div>  
+  <br><br><br>
+  <!--Fonctionnalité A2  -->
+  <table class="tableau">
+    <tr>
+      <td class="tete">
+        <p>no_declaration</p>
+      </td>
+      <td class="tete">
+        <p>date_declation</p>
+      </td>
+      <td class="tete">
+        <p>date_insp_vispre</p>
+      </td>
+      <td class="tete">
+        <p>nbr_extermin</p>
+      </td>
+      <td class="tete">
+        <p>date_debuttrait</p>
+      </td>
+      <td class="tete">
+        <p>date_fintrait</p>
+      </td>
+      <td class="tete">
+        <p>no_qr</p>
+      </td>
+      <td class="tete">
+        <p>nom_qr</p>
+      </td>
+      <td class="tete">
+        <p>nom_arround</p>
+      </td>
+      <td class="tete">
+        <p>coord_x</p>
+      </td>
+      <td class="tete">
+        <p>coord_y</p>
+      </td>
+      <td class="tete">
+        <p>longitude</p>
+      </td>
+      <td class="tete">
+        <p>latitude</p>
+      </td>
+    </tr>    
+    {% for row in liste %}
+      <div>
+      <tr>
+        <td class="ligne">
+          {{ row[0] }}
+        </td>
+        <td class="ligne">
+          {{ row[1] }}
+        </td>
+        <td class="ligne">
+          {{ row[2] }}
+        </td>
+        <td class="ligne">
+          {{ row[3] }}
+        </td>
+        <td class="ligne">
+          {{ row[4] }}
+        </td>
+        <td class="ligne">
+          {{ row[5] }}
+        </td>
+        <td class="ligne">
+          {{ row[6] }}
+        </td>
+        <td class="ligne">
+          {{ row[7] }}
+        </td>
+        <td class="ligne">
+          {{ row[8] }}
+        </td>
+        <td class="ligne">
+          {{ row[9] }}
+        </td>
+        <td class="ligne">
+          {{ row[10] }}
+        </td>
+        <td class="ligne">
+          {{ row[11] }}
+        </td>
+        <td class="ligne">
+          {{ row[12] }}
+        </td>      
+    {% endfor %}
+    </tr>
+    </div>
+  </table>   
+</body>
+</html>

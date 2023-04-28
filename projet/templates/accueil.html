@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Bienvenue</title>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
+<!-- <link rel="shortcut icon" href="#"> -->
+<script src="../static/js/script.js"></script>
+<!-- <link type="text/css" rel="stylesheet"  href="../static/style.css" /> -->
+<!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script> -->
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body >
+  <div class="header">
+    <h3>Les données à propos d’extermination de punaises de lits</h3>
+    <a style="margin-left: 25cm;color: blue;" href="http://localhost:5000/profile" ><i class='fas fa-user-circle' style='font-size:48px;color:rgb(4, 0, 255)'></i>profile</a>    
+  </div>  
+  <br><br>
+  <div class="row">
+    <div class="column">
+      <!--Fonctionnalité A2 -->
+      <form action="/formulaire" method="post">       
+          <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+            Nom de quartier:&emsp;&emsp;&emsp;</label>            
+          <input id="n_quartier" type="text" name="nom_quartier" size="40" ><br>         
+          <br> 
+          <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+            Nom d’arrondissement:&nbsp; </label>            
+          <input id="n_arrondi" type="text" name="nom_arrondi" size="40" ><br>     
+         <br> 
+          <input class="butt butt1" style="font-size: medium;margin-left: 2.5cm;" type="submit" name="bouton" value="Rechercher">
+       </form>     
+      <br>
+      <p style="color:rgb(126, 11, 17);margin-left: 2.5cm;">
+        {% if message_error %}
+          {{ message_error }}
+        {% endif %}
+      </p>
+      <br>
+      <form style="color:rgb(22, 11, 184);margin-left: 2.5cm;" action="http://localhost:5000/extermination"><button style="font-size:15px">Envoyer nouvelle declaration <i class="fa fa-list-alt"></i></button></form>        
+  </div>
+  <!-- Fonctionnalité A5 -->
+  <div class="column">  
+         <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+            La première date:&emsp;&emsp;</label>            
+          <input id="premiere-date" type="date" name="du" size="40" ><br>     
+          <br> 
+          <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+            La deuxième date:&emsp;&emsp; </label>            
+          <input id="deuxieme-date" type="date"  name="au" size="40" ><br>      
+        <br> 
+          <input class="butt butt1" style="font-size: medium;margin-left: 2.5cm;" type="submit" onclick="chercher();" value="Rechercher">
+       <br>         
+      <p style="color:rgb(126, 11, 17);margin-left: 2.5cm;">
+        {% if msg_error %}
+          {{ msg_error }}
+        {% endif %}
+      </p>
+      <!-- Fonctionnalité A6 -->
+      <div id="donnees"  style="margin-left: 2.5cm;font-size :15px;">
+        <p>Pour récuperer l'information, choissisez un quartier et appuyer sur le button envoyer.</p>
+        <p>Pour supprimer l'information, choissisez un quartier et appuyer sur le button supprimer.</p> 
+        <label for="subject" style="font-size: large;font-weight: bold;">Liste de quartier:</label> 
+              <select name="subject" id="subject" disabled="disabled">
+                    <option  selected="selected">choisir quartier</option>
+                </select>
+                <input id="button" style="margin-left: 0.6cm;" type="submit" onclick="changerQuartier();" value="envoyer" disabled="disabled">
+                <input id="suprimId" style="margin-left: 0.6cm;background-color: rgb(250, 99, 61) ;" type="submit" onclick="supprimerQuartier();" value="supprimer" disabled="disabled">
+                <br><br>
+          <div id="listquartier">
+            <table id="tab"></table>
+          </div>
+      </div>
+  </div>
+</div>      
+  
+  
+
+  </body>
+</html>

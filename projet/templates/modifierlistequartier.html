@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>listequartiers</title>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
+</head>
+<body >
+  <div class="header">
+    <h3>La modification d'une liste des quartiers</h3>
+    <p class="accueil" ><a  style="color:rgb(29, 29, 27);margin-left: 2.5cm;" href="http://localhost:5000/modifierProfile">Modifier Profile</a></p>
+  </div>  
+  <br><br><br>
+  <div class="row">      
+        <div class="column">    
+            <form action="/nouvelleliste" method="post">                     
+                <input id="id-utilisateur" type="hidden" name="id" size="40" value="{{ profile[0][1]}}"><br>         
+                <br> 
+                <label style="margin-left: 1cm;font-size: large;font-weight: bold;">
+                    Liste de quartier:&nbsp; </label>            
+                <input id="id-quartier" type="text" name="quartier" placeholder="EX: item1 item2 item3 " size="38" > 
+                <input type="submit" name="bouton" value="Ajouter">
+            </form>        
+            <form action="/supprimerliste" method="post">                     
+                <input id="id-utilisateur" type="hidden" name="id" size="40" value="{{ profile[0][1]}}"><br>         
+                <br> 
+                <label style="margin-left: 1cm;font-size: large;font-weight: bold;">
+                    Liste de quartier:&nbsp; </label>            
+                <input id="id-quartier" type="text" name="quartier" placeholder="EX: item1 item2 item3 " size="38" >
+                <input  style="background-color: rgb(255, 0, 0);" type="submit" name="bouton" value="Supprimer">
+            </form>
+            <form action="/ajouterphoto" method="post" enctype="multipart/form-data">                     
+                <input id="id-utilisateur" type="hidden" name="id"  value="{{ profile[0][1]}}"><br>         
+                <br> 
+                <label style="margin-left: 1cm;font-size: large;font-weight: bold;">
+                    Téléverser une photo:&nbsp; </label>            
+                <input id="id-photo" type="file" name="photo"  accept=".jpg,.png" > 
+                <input  type="submit" name="bouton" value="Envoyer">
+            </form>      
+           <br>
+            {% if erreur %}
+                <p style="margin-left: 2.5cm;color:rgb(187, 6, 6);">{{ erreur }}</p>           
+            {% endif %} 
+            {% if msg %}
+                <p style="margin-left: 2.5cm;color:rgb(6, 18, 187);">{{ msg }}</p>           
+            {% endif %}
+        </div>
+        <div class="column">
+         <div style="margin-left: 2.5cm;"> 
+            <p style="color:rgb(19, 11, 126);margin-left: 3.5cm;" >La liste de quartier pour cet utilisateur:</p> 
+            {% if profile %}
+            <table class="tableau">
+                    <tr>
+                    <td class="tete">
+                        <p>ID</p>
+                    </td>
+                    <td class="tete">
+                        <p>Nom de quartier</p>
+                    </td>
+                    </tr>
+                    {% for ligne in profile %}                
+                            <tr>
+                                <td class="ligne">
+                                {{ ligne[1] }}
+                                </td>
+                                <td class="ligne">
+                                    {{ ligne[2] }}
+                                </td>
+                            </tr>                               
+                    {% endfor%}
+                </table>                
+            {% else %}
+                <p style="color:rgb(19, 11, 126);" >Il n'y a pas la liste de quartier pour cet utilisateur</p> 
+            {% endif %}
+         </div> 
+        </div>
+    </div> 
+  </body>
+</html>

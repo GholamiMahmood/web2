@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>modifierProfile</title>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
+</head>
+<body>
+<div class="header">
+    <h3>Modifier un profil d'utilisateur</h3> 
+    <p class="accueil" ><a  style="color:rgb(29, 29, 27);margin-left: 2.5cm;" href="http://localhost:5000/accueil">Accueil</a></p>
+</div>
+<br><br><br>
+  <form   action="/validerprofile" method="post">
+    <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+      Nom de l'utilisateur:&emsp;&emsp;&emsp;&emsp;&ensp;</label>            
+      <input id="utilisateurId" type="text" name="nom" size="40" ><br>     
+      <br> 
+      <label style="margin-left: 2.5cm;font-size: large;font-weight: bold;">
+        Mot de passe:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</label>            
+      <input id="motPassId" type="password"  name="motPass" size="40" ><br>
+      <br>    
+    <br> 
+      <button class="butt butt1" style="font-size: medium;margin-left: 2.5cm;" >Envoyer</button>
+      <br>
+  </form>
+  {% if erreur %}
+           <p style="margin-left: 2.5cm;color:rgb(187, 6, 6);">{{ erreur }}</p>
+  {% endif %}   
+</body>
+</html>

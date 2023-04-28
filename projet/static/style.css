@@ -1,0 +1,142 @@
+
+.button1 {
+    background-color: rgb(202, 194, 183);
+    color: rgb(80, 72, 72);
+    padding: 15px 32px;
+    text-align: center;                
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.button2 {
+    background-color: rgb(202, 194, 183);
+    color: rgb(80, 72, 72);
+    padding: 15px 32px;
+    text-align: center;                
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.header {
+    padding: 1px;
+    text-align: center;
+    background: #70dd91;
+    color: rgb(19, 17, 17);
+    font-size: 18px;
+  }
+
+  .accueil {
+      color:rgb(31, 31, 29);
+      text-align: left;
+  }
+  a {
+    color:beige;
+    text-align: left;
+  }
+
+  .envoyer_calcule {
+    background: #0f39af;
+    color: rgb(80, 72, 72);
+    transition-duration: 0.4s;    
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;                
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.butt {
+  background: #4d584cb2;
+  border: none;
+  color: rgb(32, 30, 30);
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+
+.butt1:hover {
+  background-color: rgb(202, 194, 183);
+  color: rgb(15, 15, 15); 
+}
+
+.button_mois {   
+  background-color: rgb(202, 194, 183);
+  color: rgb(80, 72, 72);
+  padding: 15px 32px;
+  text-align: center;                
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.tableau {
+  font-family: arial;
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: auto; 
+  margin-right: auto;
+  
+}
+
+.tete{
+  border: 1px solid #1f0e0e;
+  text-align:center;
+  background-color:#adb3aa;
+}
+
+.ligne{
+  border: 1px solid #1f0e0e;
+  text-align:center;
+  background-color:white;
+  font-size: small;
+}
+.tab {
+  width: 320px;
+  height:25px;  
+  margin-left: 2.5cm; 
+  background: #adb3aa;
+  font-size: 15px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+table , td , th{
+  border: 0.5px solid black;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+    

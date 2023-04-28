@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>profile</title>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+<!--fonctionalité E1 , E2 -->
+<div class="header">
+    <h3>Créer ou modifier votre profil</h3> 
+    <p class="accueil" ><a  style="color:rgb(27, 27, 26);margin-left: 2.5cm;" href="http://localhost:5000/accueil">Accueil</a></p>
+</div>
+<div style="font-size: 18px;">
+    <p>Pour créer votre profil, cliquer sur le Button suivent:</p>
+    <form action="http://localhost:5000/creerProfile"><button style='font-size:30px' >Créer <i class='fas fa-user-check'></i></button></form>
+    <br><br><br>
+    <p>Pour modifier votre profil, cliquer sur le Button suivent::</p>
+    <form action="http://localhost:5000/modifierProfile"><button style='font-size:30px' >Modifier <i class='fas fa-user-edit' ></i></button></form>
+</div>
+</body>
+</html>

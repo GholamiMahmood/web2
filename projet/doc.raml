@@ -1,0 +1,141 @@
+#%RAML 1.0
+title: API REST pour le projet de session
+mediaType: application/json
+types:
+  
+  NouvelleDonnee:
+    properties:
+      quartier:
+        type: string
+        required: true
+      arrondissement:
+        type: string
+        required: true
+      adresse:
+        type: string
+        required: true
+      date:
+        type: date-only
+        required: true
+      nomPrenom:
+        type: string
+        required: true
+      description:
+        type: string
+        required: true
+     
+
+  ExistingData:
+    properties:
+      id:
+        type: number
+        required: true
+      quartier:
+        type: string
+        required: true
+      arrondissement:
+        type: string
+        required: true
+      adresse:
+        type: string
+        required: true
+      date:
+        type: date-only
+        required: true
+      nomPrenom:
+        type: string
+        required: true
+      description:
+        type: string
+        required: true
+
+  PrifilData:
+  properties:
+      nom:
+        type: string
+        required: true
+      courriel:
+        type: string
+        required: true
+      liste:
+        type: string
+        required: true
+      motPass:
+        type: string
+        required: true
+      
+         
+
+/api:
+  /declaration:
+    get:
+      description: afficher tous les données.
+      responses:
+        200:
+          body:
+            application/json:
+              type: ExistingData[]
+    post:
+      description: Creer nouvelle donnée.
+      body:
+        application/json:
+          type: NouvelleDonnee
+          example:
+            quartier: Anjou
+            arrondissement: Anjou
+            adresse: 3578 Abraham linkoln
+            date: 2021-05-15
+            nomPrenom: Anatol Filate
+            description: ponaises de lit
+      responses:
+        201:
+          description: la donnée a été créé avec succès .
+          body:
+            application/json:
+              type: ExistingData
+              example:
+                id: 4
+                quartier: Anjou
+                arrondissement: Anjou
+                adresse: 3578 Abraham linkoln
+                date: 2021-05-15
+                nomPrenom: Anatol Filate
+                description: ponaises de lit
+    delete:
+        description: supprimer d’un seul coup toutes les déclarations d’un quartier complet.
+        body:
+            application/json:
+            example:
+                quartier: Anjou
+        responses:
+          200:
+            description: La donnée a été supprimée avec succès.
+          404:
+            description: L'identifiant spécifié n'existe pas.
+
+    /{id}:
+      delete:
+        description: Supprimer complètement une dennée, spécifiées par son identifiant.
+          responses:
+             200:
+                description: La donnée a été supprimée avec succès.
+             404:
+                description: L'identifiant spécifié n'existe pas.
+
+  /profile:
+        post:
+          description: Créer un nouveux profil.
+          responses:
+            200:
+              description: Le profil a été créé avec succès.
+              body:
+                application/json:
+                   type: PrifilData
+                   example:
+                      nom: utilisateur
+                      courriel: moncourriel@gmail.com
+                      liste: Anjou Est
+                      motPass: inf5190              
+                  
+            400:
+              description: Tous les champs sont obligatoires.
